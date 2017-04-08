@@ -1,0 +1,137 @@
+*{
+	margin:0;
+	padding:0;
+}
+body{
+	background:#ffffcc;
+}
+
+#time{
+	width:10%;
+	height:120px;
+	background:#00ff99;
+	/*position:absolute;
+	right:0px;*/
+	float:right;
+	overflow:hidden;
+	line-height:40px;
+}
+.toCenter{
+	text-align:center;
+	font-weight:bold;
+}
+.bigText{
+	font:25px arial ;
+}
+#header{
+	width:100%;
+	height:120px;
+	position:absolute;
+	top:0px;
+	background:url(./dianyin.png) repeat-x;
+}
+
+
+#hold{
+	width:80%;
+	margin-left:10%;
+	margin-right:10%;
+	position:relative;
+	overflow:hidden;
+	height:1000px;
+	background-color:#ccffff;
+}
+
+
+#out{
+	width:100px;
+	height:300px;
+	position:absolute;
+	top:200px;
+	left:-100px;
+	background:#C0DCC0;
+	opacity:1;
+}
+#next{
+	position:absolute;
+	width:20px;
+	height:100px;
+	left:100px;
+	top:100px;
+	background-color:gray;
+	padding-top:20px;
+	opacity:1;
+}
+#mover{
+	width:100px;
+	height:200px;
+	position:absolute;
+	top:200px;
+	right:0px;
+	background:lime;
+	overflow:hidden;
+	opacity:0.6;
+	z-index:65536;
+}
+
+#footer{
+	width:100%;
+	height:100px;
+	clear:both;
+	border-top:1px solid blue;
+	background-color:pink;
+	position:absolute;
+	bottom:2px;
+	overflow:hidden;
+	text-align:center;
+}
+#footer p{
+	font:bold 20px/30px arial,sans-serif ;
+}
+
+#up{
+	position:fixed;
+	top:550px;
+	left:200px;
+	width:40px;
+	height:60px;
+	z-index:3;
+}
+
+#flash{
+	position:absolute;
+	left:18%;
+	top:200px;
+	height:516px;
+	width:580px;
+	overflow:hidden;
+}
+#thumbPicture{
+	position:absolute;
+	bottom:1px;
+	height:102px;
+	width:1200px; /*必须要指定 ul 的宽度，否则里面的li 元素会分行显示，即使让他们浮动*/
+	/*overflow:hidden;*/
+	z-index:65536;
+	list-style:none；
+	
+}
+#thumbPicture li{
+	/*使用左浮动，不仅可以消除，inline 使得li之间的间隙，还使得他们排成一排，但是必须要指定父亲的宽度
+	float 是漂浮的意思，不会挤压，用空就占，没空就窜，他会尽量的排成一排在父元素的空间中，父元素的空间要足够他们排成一排
+	display:inline;  //这里并不能用inline,他们不会排成一排，自动扩充*/
+	float:left;   
+	width:100px;
+	height:100px;
+	margin-left:13px;
+	opacity:0.5;
+	filter:alpha(opacity=50);
+	list-style:none;
+}
+
+.bigs{
+	position:absolute;
+	top:0;
+	left:0;
+}
+

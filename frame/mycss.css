@@ -1,0 +1,58 @@
+p{
+color:green;
+font-size:20px;
+text-align:center;
+}
+
+p.special{
+color:red;
+font-size:20px;
+}
+
+a{
+	position:relative; /*这行是必须的，绝对定位的是以其具有明确定位的祖先元素的起点开始的 */
+}
+
+a.rmline {
+  text-decoration:none;
+  color:lime;
+  background-color:yellow;
+}
+a.rmline:link{
+ color:green;
+ }
+
+ a.rmline:visited{
+ color:maroon;
+ }
+ a.rmline:hover{
+ color:tomato;
+ }
+ a.rmline:active{
+ color:honeydew;
+ }
+ 
+a span {
+	display:none;
+}
+
+a:hover span{
+	display:block;
+	font-size:20px;
+	width:120px;
+	position:absolute;
+	top:20px;
+	left:62px;
+	border:1px solid yellow;
+	padding:2px;
+	background-color:honeydew;
+	color:blue;
+}
+
+#a_img{
+	position:fixed;
+	left:422px;
+	opacity:.5;
+	top:266px;
+	z-index: 3;
+}

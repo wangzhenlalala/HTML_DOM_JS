@@ -1,0 +1,61 @@
+iframe{
+	margin-left:20px;
+	width:900px;
+	height:400px;
+}
+
+h1.first{
+	text-align:center;
+	font:40pt HARLOWSI;
+	color:pink;
+	border:1px solid blue;
+	margin-top:0px;
+	}
+#nav {
+	float:left;
+	border:1px solid maroon;
+	background-color:wheat;
+	width:18%;
+}
+#nav ul{
+	margin-left:0px;
+	list-style:none;
+	padding-left:10px;
+}
+
+#nav ul ul{
+	padding-left:32px;
+	list-style-type:square;
+}
+
+#nav a {
+	text-decoration:none
+}
+
+#nav ul li a:hover{
+	color:red;
+}
+
+#nav ul ul li a:hover{
+	color:yellow;
+}
+
+
+#nav li{
+	border-bottom:1px red solid;
+}
+
+
+#contents {
+	float:left;
+	border:1px solid yellow;
+	width:70%;
+	margin-left:40px;
+}
+
+#contents h1{
+	text-align:center;
+	color:green;
+	margin-top:0;
+	/*border:1px solid black;*/
+}

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+
+<html charset = "uft-8">
+	<head>
+		<style type="text/css">
+			*{
+				margin:0px;
+				paddig:0px;
+			}
+			#block{
+				width:300px;
+				height:180px;
+				background-color:blue;
+				position:absolute;
+				position:absolute;
+				top:100px;
+			}
+			#spanLine{
+				border-left:solid black 1px;
+				height:400px;
+				position:absolute;
+				left:500px;
+			}
+			
+		</style>
+
+		<script type="text/javascript">
+		window.onload=function(){
+			var oDiv = document.getElementById("block");
+			var oInputs = document.getElementsByTagName("input");
+			var oBtn1 = oInputs[0];
+			var oBtn2 = oInputs[1];
+			var oTxt = oInputs[2];
+			var timerHandler = null;
+			function tellDiv(){
+				clearInterval(timerHandler);
+				timerHandler = setInterval(callChange,30);
+				function callChange(){
+					var speed = 8;
+					
+					if(oDiv.offsetLeft < 500){
+						oDiv.style.left = oDiv.offsetLeft + speed + "px";//object.offsetLeft is readonly number not a string;
+					}else{
+						oDiv.style.left = 500 + 'px';
+						clearInterval(timerHandler);
+						return;
+					}		
+					oTxt.value = oDiv.offsetLeft;
+				}
+			}
+			
+			oBtn1.onclick = function(){
+				//clearInterval(timerHandler);
+				/*
+					上面的清除定时器的语句，是很重要的。
+					每次单击button，都会产生一个新的定时器，所有的定时器会调用相同的callChange函数，去改变对象的同一个值，这种改变会叠加在一起，使得对象属性的改变率增大。
+					所以，在每次产生一个新的定时器之前，要把该对象上之前的定时器清除。
+					清楚定时器后，对象的属性值留在当前变化了的值，而不是回到起始值，也不是变到终点值，就像是，走路时听了下来，走到了哪里，
+					就停在了哪里
+					jQuery的对象的动画中有一个stop()方法，作用是清除对象上当前正在执行的动画，目的应该和这里的相同。
+				*/
+				//timerHandler = setInterval(callChange,30);
+				/*
+					这句的意思是在用户单击按钮是，为对象生成一个定时器。让对象开始 ‘表演’ 改变。但是，仔细想想，
+					对象表演的 从开始，到结束的整个过程，所以依赖的所有资源，应该都有自己来拥有和完成，，把自己封装成一个与外部低耦合的对象，
+					他需要的仅仅是，别人告诉他，hi 用户让你开始表演啦 的“信号”，这样就比较好维护，对象属性的状态
+					tellDiv();
+				*/
+				tellDiv();
+			}
+
+			oBtn2.onclick = function(){
+				clearInterval(timerHandler); //因为同一个时刻一个对象上只有，一个定时器在起作用，所以可以清楚该定时器来暂停动画，
+			}
+			
+		}
+			
+
+		</script>
+	</head>
+
+	<body>	
+			<span id="spanLine"></span>
+			<input type="button" value="click to move"/>
+			<input type="button" value="click to stop"/>
+			<input type="text"/>
+			<div id="block">
+			</div>
+	</body>
+</html>

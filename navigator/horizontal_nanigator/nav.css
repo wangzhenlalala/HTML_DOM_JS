@@ -1,0 +1,58 @@
+h1.first{
+	text-align:center;
+	font:40pt HARLOWSI;
+	color:pink;
+	border:1px solid blue;
+	margin-top:0px;
+}
+
+#header {
+	width:auto;
+	height:100px;
+	/*border:1px dashed maroon;*/
+}
+
+
+
+#logo {
+	float:left;
+	border:1px dashed blue;
+}
+
+#logo img{
+	height:100px;
+	width:100px;
+}
+
+#nav {
+	float:left;
+	background-color:wheat;
+	width:auto;
+	margin-left:200px;
+	margin-top:42px;
+}
+#nav ul{
+	margin-left:0px;
+	list-style:none;
+	padding-left:10px;
+	display:inline;
+	
+}
+
+#nav a {
+	text-decoration:none
+}
+
+#nav ul li{
+	display:inline;
+}
+
+#nav ul li a:hover{
+	color:red;
+}
+
+#nav li{
+	border-bottom:1px red solid;
+	font-size:50px;
+	margin-left:10px;
+}
