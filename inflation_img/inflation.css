@@ -1,0 +1,21 @@
+#holder{
+    width:400px;
+    height:300px;
+    border:1px solid yellow;
+    overflow:hidden;
+    position:relative;
+}
+
+.shower1{
+    width:400px;
+    height:300px;
+    /*position: absolute;*/
+}
+
+.shower2{
+    width:460px;
+    height:360px;
+    position: absolute;
+    top:-30px;
+    left:-30px;
+}
