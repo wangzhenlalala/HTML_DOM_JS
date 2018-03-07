@@ -1,0 +1,33 @@
+<!<!doctype html>
+<html>
+	<head>
+	</head>
+
+	<body>
+		<div> hello generator </div>
+		<script>
+				var arr = [1,[ [2,3],4 ] ];
+
+				flat = function* (a){
+					var length = a.length;
+					for(var i = 0; i < length ; i++){
+						item = a[i];
+						if(typeof item != 'number'){
+							yield* flat(item);
+						}else{
+							yield item;
+						}
+					}
+				}
+				var gen = flat(arr);
+				const arrayProvinces = [
+					'安徽省学生组',
+					'西藏自治区学生组','安徽省你是我的学生组','西藏自治区你是我的学生组',
+					'广西壮族自治区学生组','安徽省我是学生组','广西壮族自治区我是学生组',
+					'西藏自治区我是学生组','广西壮族自治区你是我的学生组',
+				]
+
+				console.log(arrayProvinces.sort());
+		</script>
+	</body>
+</html>

@@ -1,0 +1,55 @@
+<!<!doctype html>
+<html>
+	<head>
+		<style>
+			*{
+				padding: 0;
+				margin: 0;
+			}
+			html{
+				/*border: blue 10px solid;*/
+			}
+			body{
+				width: 100%;
+				height: 2940px;
+				background: url(./images/background.jpg) center top;
+				/*border: 10px solid re*/d;
+			}
+			.floater{
+				width: 1000px;
+				height: 1000px;
+				margin-top: 680px;
+				margin-left: 50%;
+				transform: translateX(-50%);
+				background: rgba(100,100,30,0.4);
+			}
+		</style>
+	<script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+	<script src = "./art-template.js"></script>
+	</head>
+
+	<body>
+		<div class="floater"></div>
+		<script>
+			strHtml = '<div class="one">' 
+				+ '<p>hello template</p>' 
+				+ '<div class="two">'
+					+ '<div class="three">three</div>'
+				+ '</div>'
+			+ '</div>'
+			$root = $(strHtml);
+			$(".floater").html($root);
+
+			var data = {
+				name: 'wangzhen'
+			}
+			var option = {};
+			var tpl = "<div>{{$data.name}}</div>"
+			// var renderString = template(tpl,data);  //basing on template name
+			// var renderFuc = template.compile(tpl,option); //compile source of template as function
+			var renderString = template.render(tpl,data,option); //// compile source of template as function and immediately invoke it
+			console.log(renderString);
+			console.log(template);
+		</script>
+	</body>
+</html>

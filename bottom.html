@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			html{
+				border: 1px solid red;
+			}
+			body{
+				border: 1px solid red;
+			}
+		  .test{
+		  	width:200px;
+		  	height:2000px;
+		  	background:blue;
+		  	margin:0 auto;
+		  	border:30px solid yellow;
+		  }
+		  .border{
+		  	width:200px;
+		  	height:100px;
+		  	margin:100px auto;
+		  }
+
+		  ul{
+		  	padding: 0 1.5%;
+		  	width: 100%;
+
+		  }
+		  .tabs li{
+		  	display: inline;  //不可以指定为 inline-block,否则a 标签下的 width: 20%,就不是ul的20%，而是 li 的20%;
+		  }
+		  .tabs li a{
+		  	display: inline-block;
+		  	width: 23.5%;
+		  	margin-right: 1%;
+		  	font-size: 30px;
+		  	line-height: 1.5;
+		  	text-decoration: none;
+		  	outline: none;
+		  	background: lime;
+		  	text-align: center;
+		  }
+		  .tabs li:last-child a{
+		  	margin-right: 0;
+		  }
+		  .tabs li a:visited{
+
+		  }
+		  .tabs li a:hover{
+		  	background: green;
+		  	color: white;
+		  }
+		  .tabs li a:active{
+		  	background: red;
+		  	color: black;
+		  }
+		</style>
+	</head>
+
+	<body>
+		
+		<h2>Shopping (unordered) list</h2>
+
+		<p>Paragraph for reference, paragraph for reference, paragraph for reference,
+		paragraph for reference, paragraph for reference, paragraph for reference.</p>
+
+		<ul>
+		  <li>Humous</li>
+		  <li>Pitta</li>
+		  <li>Green salad</li>
+		  <li>Halloumi</li>
+		</ul>
+
+		<h2>Recipe (ordered) list</h2>
+
+		<p>Paragraph for reference, paragraph for reference, paragraph for reference, 
+		paragraph for reference, paragraph for reference, paragraph for reference.</p>
+
+		<ol>
+		  <li>Toast pitta, leave to cool, then slice down the edge.</li>
+		  <li>Fry the halloumi in a shallow, non-stick pan, until browned on both sides.</li>
+		  <li>Wash and chop the salad.</li>
+		  <li>Fill pitta with salad, humous, and fried halloumi.</li>
+		</ol>
+
+		<h2>Ingredient description list</h2>
+
+		<p>Paragraph for reference, paragraph for reference, paragraph for reference, 
+		paragraph for reference, paragraph for reference, paragraph for reference.</p>
+
+		<dl>
+		  <dt>Humous</dt>
+		  <dd>A thick dip/sauce generally made from chick peas blended with tahini, lemon juice, salt, garlic, and other ingredients.</dd>
+		  <dt>Pitta</dt>
+		  <dd>A soft, slightly leavened flatbread.</dd>
+		  <dt>Halloumi</dt>
+		  <dd>A semi-hard, unripened, brined cheese with a higher-than-usual melting point, usually made from goat/sheep milk.</dd>
+		  <dt>Green salad</dt>
+		  <dd>That green healthy stuff that many of us just use to garnish kebabs.</dd>
+		</dl>
+		<a href="#"> i am a link </a>
+
+		<ul class="tabs">
+			<li><a href="#">first</a></li><li><a href="#">second</a></li><li><a href="#">third</a></li><li><a href="#">fourth</a></li>
+		</ul>
+
+		<span>
+			用ul li a 实现tabs:
+			<ol style="margin:0">
+				<li>a 要带有 href 属性</li>
+				<li>li 要是 display: inline <span style="color:red;text-decoration: line-through;">(inline-block)</span></li>
+				<li>a has display of <strong style="color:blue;">inline-block</strong></li>
+				<li>a 的width：23%，是相对于ul的，而不是相对于 li 的，可能就是因为 li的display是inline</li>
+				<li> p 里面的 ol 会被拿到 p 的外面去
+			</ol>
+		</span>
+		<span>hello world</span>
+		<div style="width: 400px;height: 100px;background: gray">
+			<form>
+				<label for="xFile">upload files</label>
+			  <input type="file" id="xFile"  style="visibility: hidden" multiple/>
+			</form>
+		</div>
+		
+
+
+
+		<script>
+			var input = document.getElementById('xFile');
+			input.addEventListener('change',function(){
+
+				console.log(this)
+				console.log(this.files)
+			})
+
+		</script>
+	</body>
+</html>

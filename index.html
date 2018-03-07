@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div.active {
+      border:10px solid blue;
+    }
+    .bord1{
+      width:90%;
+      height:auto;
+      border: 10px solid red;
+    }
+    .bord1::first-letter{
+      color: red;
+    }
+    .bord1::selection{
+      color: blue;
+    }
+   .float{
+      margin:30px auto;
+      width:500px;
+      background:wheat;
+   } 
+   .fontSize{
+    font-size:30px;
+    white-space:pre;
+   }
+   .text{
+    width:300px;
+    background: lime;
+    /*word-break: break-all;*/
+    /*word-wrap: break-word;*/
+    /*overflow:hidden;
+    text-overflow: ellipsis;*/
+   }
+  </style>
+</head>
+<body style="border: 1px solid red">
+  <div style="background:lime;width:100%;height:100px"></div>
+  <ul>
+    <li>aaaaaaaa</li>
+    <textarea>hello there</textarea>
+    <div class="out">
+      <div class='in'>
+      </div>
+    </div>
+
+    <ul>
+      <li>unorder</li>
+      <li>list</li>
+    </ul>wwwwwwwwww
+    <ol>
+      <li>order</li>
+      <li>list</li>
+    </ol>
+
+    <dl>
+      <dt>wanghen</dt>
+      <dd>define</dd> <dd>list</dd>
+      
+      <dt>fanghua</dt>
+      <dd>define</dd>
+      <dd>list</dd>
+      
+    </dl>
+  </ul>
+  <div class='bord1 active '>
+    如果有两个类，设置了同一个样式属性，谁会起作用呢？？
+    我们指定 元素样式属性的方式有：<br/>
+    1.在 HTML标签的 style属性中指定<br/>
+    2.通过 CSS文件，html &lt;style&gt; 标签指定：两者都是通过 选择器(selector)来选中元素，然后设置样式property<br/>
+    我们用1234 ：4为数字来作为一个property 的specificity:<br/>
+    property处在：<br/>
+    style：最高位 为 1 ，否则为0<br/>
+    id selector : 二位 为 1<br/>
+    class selector | pseudo class selector | attribute selector :第三位为 1<br/>
+    element selector | pseudo element selector  : 第四位为 1<br/>
+    例如  #id .class > p + div  0112 为 选中的div 上的property的specificity <br/>
+
+    当specificity 相同时，，，，以选择器的顺序抉择，，最后定义的 选择器 win；<br/>而不是在class=’‘ 中的顺序
+  </div>
+  <div class="float">
+    如果没有我元素指定 width ，元素默认的width 尽可能的占满父元素的width 即默认为:100%
+    <div class="left">
+      left
+    </div>
+
+    <div class="right">
+    right
+    </div>
+    如果有两个类，设置了同一个样式属性，谁会起作用呢？？
+    我们指定 元素样式属性的方式有：<br/>
+    1.在 HTML标签的 style属性中指定<br/>
+    2.通过 CSS文件，html &lt;style&gt; 标签指定：两者都是通过 选择器(selector)来选中元素，然后设置样式property<br/>
+    我们用1234 ：4为数字来作为一个property 的specificity:<br/>
+    <span style="color:red"> inline element</span>
+    <span style="color:blue"> inline element</span>如果有两个类，设置了同一个样式属性，谁会起作用呢？？
+  </div>
+  <h1>我是h1</h1>
+  <div class="fontSize">
+    <h1>我是h1,我在div里面</h1>
+  </div>
+  <p class='text'>TypeScript transformer for code generationnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnnn TypeScript transformer for code 11.<br>TypeScript transformer for code generation.</p>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	</head>
+	<body>
+		<svg width="300" height="300" version="1.1" xmlns="http://www.w3.org/2000/svg">
+			<defs>
+				<radialGradient id="RG" cx="50%" cy="50%" r="50%" fx="30%" fy="50%">
+					<stop offset="0%" stop-color="red" />
+					<stop offset="50%" stop-color="yellow" />
+					<stop offset="100%" stop-color="purple" />
+				</radialGradient>
+			</defs>
+
+			<rect x="50" y="50" width="200px" height="200px" style="fill:url(#RG)"/>
+		</svg>
+		<input type="range" id="rangefx" min="0" max="100" value="20"/><label name="fx"></label>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		<input type="range" id="rangecx" min="0" max="100" value="50"/><label name="cx"></label>
+		<script>
+			var rangefx = document.querySelector("#rangefx");
+			var labelfx = document.querySelector("[name='fx']");
+
+			var rangecx = document.querySelector("#rangecx");
+			var labelcx = document.querySelector("[name='cx']");
+
+			var rg = document.querySelector("#RG");
+			labelfx.innerHTML="fx : " + "20" + "%";
+			labelcx.innerHTML="cx : " + "50" + "%";
+			rangefx.addEventListener("input",function(event){
+				labelfx.innerHTML = "fx : " + event.target.value + "%";
+				rg.setAttribute("fx",event.target.value + "%");
+			})
+			rangecx.addEventListener("input",function(event){
+				labelcx.innerHTML = "cx : " + event.target.value + "%";
+				rg.setAttribute("cx",event.target.value + "%");
+			})
+		</script>
+	</body>
+</html>

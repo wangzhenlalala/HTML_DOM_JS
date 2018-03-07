@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<style>
+			.flip{
+				width: 100px;
+				height: 100px;
+				background: lime;
+			}	
+
+			.down{
+				animation: move 3s linear;
+			}
+
+			@keyframes move{
+				0%{
+					margin-top: 0;
+				}
+				25%{
+					margin-top: 100px;
+				}
+				50%{
+					margin-top: 200px;
+				}
+				75%{
+					margin-top: 300px;
+				}
+				100%{
+					margin-top: 400px;
+				}
+			}
+
+			@keyframes slide-from-right {
+				0% {
+		    -webkit-transform: translateX(150px) rotate(360deg);
+		            transform: translateX(150px) rotate(360deg);
+			  }
+			  100% {
+			    -webkit-transform: none;
+			            transform: none;
+			  }
+		  }
+		  .flip{
+		  	animation: slide-from-right 3s infinite alternate linear;
+		  }
+		</style>
+	</head>
+	<body>
+		<div class="flip slide-from-right" id="single">hello move</div>
+		<script>
+			var element = document.getElementById('single');
+			element.addEventListener('click',function(event){
+				this.classList += ' down'
+			})
+		</script>
+	</body>
+</html>
