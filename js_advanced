@@ -1,0 +1,48 @@
+element.style => cssstyleDeclaration 实例，内联的样式，不包含link,style合并的样式
+    e.style.backGround = 'red'
+    e.style.cssFloat = 'right'
+CSSStyleDeclaration ->
+  cssText
+  length
+  removeProperty('width') 回复默认的样式
+  getPropertyValue('width') => '100px'
+  setProperty('width','100px','improtant')
+  
+DOM2 
+  style = document.defaultView.getComputedStyle()  =》 CSSStyleDeclaration : link style inline 三者的计算结果 readONLY
+  element.currentStyle(IE)
+  style.border  style.borderLeftWidth  (rollup property)
+  
+  
+  CSSStyleSheet -> link and style 中定义的样式
+    .disabled : true 
+    .href
+    .cssRules(rules)
+    .deleteRule(index) or (removeRule)
+    .insertRule(rule,index) or (addRule)
+  documeht.styleSheets 所有的样式表  rel="stylesheet" document.querySelectorAll("link[rel=stylesheet]")才会显示
+    or LINKElement StyleElement 
+        .sheet or .styleSheet(ie) => CSSStyleSheet
+   CSSRule 被 CSSStyleRule 继承
+        .cssText 只读
+        .selectorText
+        .style
+            .cssText 可重写
+ **
+    div.box{
+      backgroundColor: 'red';
+      color: 'blue';
+     }
+     
+    cssrule.selectorText{
+      cssrule.style.cssText
+    }
+    
+    cssrule.sttle.color = 'red'  所有带有.box的div的color都会被改变
+    }
+    }
+ **
+ 
+ sheet.insertRule("span.lignt{fontSize: '10px'}",0) 成为第一条规则
+ sheet.addRule(selectorText,cssText,0) (only ie)
+ sheet.deleteRule(index) sheet.removeRule(index)(ie only)
