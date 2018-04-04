@@ -1,0 +1,11 @@
+offset dimension: 偏移量
+    contentWidth + paddingWidth + borderWidth + ScrollBarWidth  == offsetWidth
+    offsetHeight:
+    offsetWidth:
+    offsetLeft:
+    offsetTop: 元素的上边框【外沿】，到包含元素的上边框【内沿】的像素距离
+
+    element.offsetParent
+client dimension : 客户区
+    clientWidth:
+    clientHeight: conentHeight + paddingHeight 不包含滚动条的尺寸
